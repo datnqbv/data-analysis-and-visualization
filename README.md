@@ -22,7 +22,7 @@ Truc_quan/
 │   ├── salary_distribution.png
 │   ├── top_10_jobs.png
 │   └── top5_jobs_by_location.png
-└── 📄 README.md                       # File hướng dẫn này
+└──  README.md                       # File hướng dẫn này
 ```
 
 ##  DỮ LIỆU
