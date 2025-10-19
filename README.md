@@ -1,10 +1,10 @@
-# 📊 DỰ ÁN PHÂN TÍCH VÀ TRỰC QUAN HÓA DỮ LIỆU JOBS
+#  DỰ ÁN PHÂN TÍCH VÀ TRỰC QUAN HÓA DỮ LIỆU JOBS
 
-## 🎯 TỔNG QUAN DỰ ÁN
+##  TỔNG QUAN DỰ ÁN
 
 Dự án phân tích dữ liệu việc làm trong lĩnh vực Data Science, bao gồm EDA, làm sạch dữ liệu, phân tích nâng cao và trực quan hóa. Dự án sử dụng Python với các thư viện pandas, seaborn, matplotlib, scikit-learn.
 
-## 📁 CẤU TRÚC DỰ ÁN
+##  CẤU TRÚC DỰ ÁN
 
 ```
 Truc_quan/
@@ -25,7 +25,7 @@ Truc_quan/
 └── 📄 README.md                       # File hướng dẫn này
 ```
 
-## 🗃️ DỮ LIỆU
+##  DỮ LIỆU
 
 ### Dataset gốc: `Data_Jobs.csv`
 - **Kích thước:** 3,187 records × 24 columns
@@ -45,7 +45,7 @@ Truc_quan/
 - `JD_Trans`: Mô tả công việc
 - `Data_Engineer`, `Data_Analyst`, `Data_Scientist`, etc.: Các role flags
 
-## 🚀 HƯỚNG DẪN CHẠY DỰ ÁN
+##  HƯỚNG DẪN CHẠY DỰ ÁN
 
 ### 1. Cài đặt thư viện
 ```bash
@@ -72,7 +72,7 @@ jupyter notebook 02_Advanced_Analysis_NLP_Stats_Model.ipynb
 python analysis.py
 ```
 
-## 📊 CÁC PHÂN TÍCH ĐÃ THỰC HIỆN
+##  CÁC PHÂN TÍCH ĐÃ THỰC HIỆN
 
 ### 1. **EDA & Data Cleaning** (`01_EDA_Cleaning.ipynb`)
 - ✅ Khảo sát dữ liệu thô
@@ -83,32 +83,32 @@ python analysis.py
 
 ### 2. **Advanced Analysis** (`02_Advanced_Analysis_NLP_Stats_Model.ipynb` - tùy chọn)
 
-#### 🔍 **Biểu đồ chuyên sâu:**
+####  **Biểu đồ chuyên sâu:**
 - Phân bố lương theo Role
 - Lương theo Location (violin plot)
 - Lương theo nhóm kinh nghiệm
 - Pairplot mở rộng
 
-#### 🤖 **NLP Analysis:**
+####  **NLP Analysis:**
 - Khai thác văn bản JD_Trans
 - Đếm tần suất kỹ năng (Python, SQL, Power BI, etc.)
 - Bigram analysis
 
-#### 📈 **Mô hình hóa & đánh giá:**
+####  **Mô hình hóa & đánh giá:**
 - Linear Regression (baseline)
 - Ridge Regression
 - Cross-validation (CV=5)
 - Model evaluation (MAE, MAPE)
 
-#### 🎯 **Clustering & Tương quan:**
+####  **Clustering & Tương quan:**
 - K-means clustering
 - Elbow method, Silhouette score
 - Correlation matrix & Random Forest feature importance
 
-#### 🔄 **Phân tích nhóm (nếu dùng clustering):**
+####  **Phân tích nhóm (nếu dùng clustering):**
 - Phân tích đặc điểm từng cluster
 
-#### 📊 **Tương quan & tầm quan trọng biến:**
+####  **Tương quan & tầm quan trọng biến:**
 - Ma trận tương quan
 - Random Forest feature importance
 - Trực quan hóa tương quan
@@ -118,16 +118,16 @@ python analysis.py
 - Thống kê mô tả
 - Lưu biểu đồ vào thư mục `charts/`
 
-## 📈 KẾT QUẢ CHÍNH
+##  KẾT QUẢ CHÍNH
 
-### 🎯 **Insights quan trọng:**
+###  **Insights quan trọng:**
 1. **Top 10 jobs phổ biến:** Data Engineer, Data Analyst, Data Scientist
 2. **Phân bố lương:** Từ 1,000 - 4,000 VND (triệu)
 3. **Kinh nghiệm:** 0-10 năm, tập trung ở 1-3 năm
 4. **Location:** HANOI, HCMC chiếm đa số
 5. **Tương quan:** Kinh nghiệm có tương quan mạnh với lương
 
-### 📊 **Biểu đồ được tạo:**
+###  **Biểu đồ được tạo:**
 - Top 10 jobs phổ biến
 - Phân bố lương
 - Boxplot lương theo job
@@ -136,7 +136,7 @@ python analysis.py
 - Jobs theo location
 - Top 5 jobs theo location
 
-## 📚 LÝ THUYẾT NỀN TẢNG (TÓM TẮT)
+##  LÝ THUYẾT NỀN TẢNG (TÓM TẮT)
 
 - **EDA (Exploratory Data Analysis):** giai đoạn khám phá để hiểu cấu trúc, phân phối, tương quan, phát hiện dữ liệu thiếu/ngoại lai trước khi mô hình hóa. Công cụ: thống kê mô tả, histogram/boxplot/pairplot, heatmap.
 - **Làm sạch dữ liệu:** đảm bảo 5 tiêu chí chất lượng (Accuracy, Completeness, Consistency, Integrity, Timeliness). Kỹ thuật dùng trong dự án:
@@ -149,7 +149,7 @@ python analysis.py
 - **Clustering K-means:** phân cụm theo `Min_YOE`, `Est_Salary` (kèm one-hot `Location`). Chọn k bằng Elbow/Silhouette; phân tích đặc trưng từng cụm để định vị phân khúc công việc.
 - **Tương quan & Feature importance:** ma trận tương quan để nhìn quan hệ tuyến tính; Random Forest importance để xem đóng góp tương đối (phi tuyến) của biến.
 
-## 🧪 QUY TRÌNH & THỰC HÀNH
+##  QUY TRÌNH & THỰC HÀNH
 
 1) Chuẩn bị môi trường
 - Python ≥3.9; thư viện: `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn`, `statsmodels` (nếu cần), `scipy` (nếu cần).
@@ -183,7 +183,7 @@ python analysis.py
 5) Phân tích cơ bản — `analysis.py`
 - Sinh 7 biểu đồ cốt lõi (top job, lương, boxplot theo top job, kinh nghiệm, heatmap, theo location, top5 theo location) và lưu tại `charts/`.
 
-## 🔎 CHI TIẾT KẾT QUẢ & DIỄN GIẢI
+## CHI TIẾT KẾT QUẢ & DIỄN GIẢI
 
 - Top job phổ biến: nghiêng về Data Engineer/Analyst/Scientist → phản ánh cầu việc làm nhóm Data nền tảng.
 - Lương ước tính: tập trung 1,000–4,000 (triệu VND), phân phối lệch phải; boxplot theo nhóm job cho thấy chênh lệch giữa top5 job phổ biến.
@@ -194,13 +194,13 @@ python analysis.py
 - Hồi quy: Ridge giảm overfit nhẹ; MAE/MAPE ở mức baseline mô tả được xu hướng nhưng còn dư địa cải thiện (bổ sung đặc trưng).
 - Clustering: cụm lương–YOE cho thấy phân khúc “junior/median” chiếm số đông, cụm “cao lương–YOE cao” nhỏ hơn.
 
-## 🧪 KIỂM CHỨNG & TÁI LẬP
+##  KIỂM CHỨNG & TÁI LẬP
 
 - Chạy `Clean_data.py` để tạo `Data_Jobs_Clean.csv` → mở `analysis.py` hoặc notebook nâng cao.
 - Nếu không có `Data_Jobs.csv`, cần cung cấp file gốc cùng cấu trúc như mô tả.
 - Kiểm tra ảnh xuất trong `charts/` khớp tiêu đề mục “Biểu đồ được tạo”.
 
-## ⚠️ HẠN CHẾ & HƯỚNG PHÁT TRIỂN
+##  HẠN CHẾ & HƯỚNG PHÁT TRIỂN
 
 - Hạn chế:
   - Đường dẫn tuyệt đối Windows → giảm tính di động; nên tham số hóa hoặc dùng đường dẫn tương đối.
@@ -214,14 +214,14 @@ python analysis.py
   - Kiểm định thống kê/Bootstrap CI (nếu cần trong báo cáo học thuật — hiện đã bỏ khỏi notebook theo yêu cầu).
   - Dashboard (Streamlit/Plotly Dash) cho tương tác trực quan.
 
-## ♻️ THỰC HÀNH TỐT
+##  THỰC HÀNH TỐT
 
 - Một nguồn sự thật cho làm sạch: giữ logic trong `Clean_data.py` và để notebook gọi lại nếu cần.
 - Gắn nhãn phiên bản dữ liệu (`Last_Updated`) để truy vết.
 - Lưu toàn bộ biểu đồ và chốt seed/random_state cho tái lập.
 - Thêm unit test nhẹ cho cleaning (kiểm tra mapping location, non-negative `Min_YOE`, không NA sau clean...).
 
-## 🛠️ CÔNG NGHỆ SỬ DỤNG
+##  CÔNG NGHỆ SỬ DỤNG
 
 ### **Thư viện Python:**
 - `pandas`: Xử lý dữ liệu
@@ -239,28 +239,21 @@ python analysis.py
 - **Machine Learning:** Regression, Clustering
 - **Visualization:** 7+ loại biểu đồ khác nhau
 
-## 👥 THÀNH VIÊN NHÓM
 
-*Dự án được thực hiện bởi nhóm 3 thành viên cho môn học "Phân tích và Trực quan hóa Dữ liệu"*
-
-## 📝 GHI CHÚ
+##  GHI CHÚ
 
 - Tất cả biểu đồ được lưu trong thư mục `charts/`
 - Dữ liệu đã được làm sạch và chuẩn hóa
 - Code có comment tiếng Việt để dễ hiểu
 - Notebooks có thể chạy độc lập
 
-## 🎓 MỤC TIÊU HỌC TẬP
+##  MỤC TIÊU HỌC TẬP
 
 Dự án này giúp sinh viên:
-- ✅ Thực hành EDA và Data Cleaning
-- ✅ Áp dụng Machine Learning cơ bản
-- ✅ Sử dụng các thư viện Python phổ biến
-- ✅ Trực quan hóa dữ liệu hiệu quả
-- ✅ Phân tích thống kê và NLP
-- ✅ Viết báo cáo phân tích chuyên nghiệp
+-  Thực hành EDA và Data Cleaning
+-  Áp dụng Machine Learning cơ bản
+-  Sử dụng các thư viện Python phổ biến
+-  Trực quan hóa dữ liệu hiệu quả
+-  Phân tích thống kê và NLP
+-  Viết báo cáo phân tích chuyên nghiệp
 
----
-**📅 Ngày tạo:** 2025  
-**🎯 Môn học:** Phân tích và Trực quan hóa Dữ liệu  
-**👥 Số thành viên:** 3 người
