@@ -8,13 +8,13 @@ Dự án phân tích dữ liệu việc làm trong lĩnh vực Data Science, bao
 
 ```
 Truc_quan/
-├── 📊 Data_Jobs.csv                    # Dữ liệu thô
-├── 🧹 Data_Jobs_Clean.csv             # Dữ liệu đã làm sạch
-├── 📓 01_EDA_Cleaning.ipynb           # Notebook EDA & Làm sạch
-├── 📓 02_Advanced_Analysis_NLP_Stats_Model.ipynb  # Notebook phân tích nâng cao (tùy chọn)
-├── 🐍 analysis.py                     # Script phân tích cơ bản
-├── 🧹 Clean_data.py                   # Script làm sạch dữ liệu
-├── 📁 charts/                         # Thư mục chứa biểu đồ
+├──  Data_Jobs.csv                    # Dữ liệu thô
+├──  Data_Jobs_Clean.csv             # Dữ liệu đã làm sạch
+├──  01_EDA_Cleaning.ipynb           # Notebook EDA & Làm sạch
+├──  02_Advanced_Analysis_NLP_Stats_Model.ipynb  # Notebook phân tích nâng cao (tùy chọn)
+├──  analysis.py                     # Script phân tích cơ bản
+├──  Clean_data.py                   # Script làm sạch dữ liệu
+├──  charts/                         # Thư mục chứa biểu đồ
 │   ├── experience_distribution.png
 │   ├── heatmap_correlation.png
 │   ├── jobs_by_location.png
