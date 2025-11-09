@@ -1,4 +1,22 @@
-#  DỰ ÁN PHÂN TÍCH VÀ TRỰC QUAN HÓA DỮ LIỆU JOBS
+# DỰ ÁN PHÂN TÍCH VÀ TRỰC QUAN HÓA DỮ LIỆU JOBS
+
+## TÓM TẮT ĐIỂM QUAN TRỌNG & PHÂN TÍCH ĐÃ THỰC HIỆN
+
+- Làm sạch dữ liệu tự động bằng script (`Clean_data.py`) và giải thích trực quan bằng notebook (`01_EDA_Cleaning.ipynb`).
+- Phân tích dữ liệu thô, phát hiện và xử lý missing values, outliers, chuẩn hóa dữ liệu.
+- Trực quan hóa dữ liệu với nhiều loại biểu đồ: phân bố lương, kinh nghiệm, vị trí, top job, heatmap tương quan, v.v.
+- Phân tích nâng cao: NLP (trích xuất kỹ năng từ mô tả công việc), hồi quy dự đoán lương, phân cụm (clustering), đánh giá mô hình.
+- Kết quả phân tích: xác định top job phổ biến, mức lương, yêu cầu kinh nghiệm, kỹ năng quan trọng, mối liên hệ giữa các biến.
+- Toàn bộ quy trình có thể tái lập, dữ liệu và biểu đồ được lưu đầy đủ, code có chú thích rõ ràng.
+
+### CÁC PHÂN TÍCH ĐÃ THỰC HIỆN
+1. **Làm sạch dữ liệu:** Xử lý thiếu, ngoại lai, chuẩn hóa, mapping, xuất file sạch.
+2. **EDA (Phân tích dữ liệu thô):** Thống kê mô tả, kiểm tra phân phối, so sánh trước/sau làm sạch.
+3. **Trực quan hóa:** Biểu đồ phân bố lương, kinh nghiệm, top job, boxplot, heatmap tương quan, jobs theo location, v.v.
+4. **NLP & Phân tích kỹ năng:** Trích xuất kỹ năng từ mô tả công việc, đếm tần suất, bigram.
+5. **Hồi quy & mô hình hóa:** Linear Regression, Ridge Regression, đánh giá MAE/MAPE, cross-validation.
+6. **Clustering:** K-means, phân tích đặc trưng từng cụm, trực quan hóa phân khúc lương-kinh nghiệm.
+7. **Kết luận & đề xuất:** Xác định nhóm job/lương/kinh nghiệm nổi bật, kỹ năng cần thiết, đề xuất phát triển kỹ năng.
 
 ##  TỔNG QUAN DỰ ÁN
 
