@@ -43,12 +43,16 @@ location_map = {
     "HN": "HANOI", "HA NOI": "HANOI", "HÀ NỘI": "HANOI",
     "HCM": "HCMC", "HO CHI MINH": "HCMC", "TPHCM": "HCMC", "TP. HCM": "HCMC",
     "VIETNAM": "VIETNAM", "VN": "VIETNAM", "VN*": "VIETNAM", "VN ( HN": "VIETNAM",
-    "PHILIPINES": "PHILIPPINES", "PHILIPPINES": "PHILIPPINES",
-    "REMOTE": "REMOTE", "UNKNOWN": "UNKNOWN"
+    "REMOTE": "REMOTE"
 }
 df["Location"] = df["Location"].replace(location_map)
-valid_locations = ["HANOI", "HCMC", "VIETNAM", "PHILIPPINES", "REMOTE", "UNKNOWN"]
+valid_locations = ["HANOI", "HCMC", "VIETNAM", "REMOTE"]
 df.loc[~df["Location"].isin(valid_locations), "Location"] = "UNKNOWN"
+
+# ===== Loại bỏ dữ liệu PHILIPPINES và UNKNOWN =====
+print(f"📌 Trước khi lọc Location: {df.shape[0]} dòng")
+df = df[df["Location"].isin(valid_locations)]
+print(f"✅ Sau khi loại bỏ PHILIPPINES & UNKNOWN: {df.shape[0]} dòng")
 
 # Min_YOE
 df["Min_YOE"] = df["Min_YOE"].round().astype(int)

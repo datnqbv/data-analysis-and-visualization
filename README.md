@@ -1,12 +1,21 @@
-# DỰ ÁN PHÂN TÍCH VÀ TRỰC QUAN HÓA DỮ LIỆU JOBS
+# DỰ ÁN PHÂN TÍCH VÀ TRỰC QUAN HÓA DỮ LIỆU VIỆC LÀM NGÀNH CNTT Ở VIỆT NAM
+
+## 🎯 ĐỀ TÀI
+**"Phân tích và trực quan hóa dữ liệu việc làm ngành CNTT ở Việt Nam"**
+
+## 📍 PHẠM VI NGHIÊN CỨU
+- **Thị trường:** Việt Nam (Hà Nội, TP.HCM, Việt Nam, Remote)
+- **Ngành:** CNTT - Data Science, Data Engineering, Data Analysis, Business Intelligence
+- **Dữ liệu:** 3,010 công việc sau khi làm sạch (loại bỏ PHILIPPINES và UNKNOWN)
 
 ## TÓM TẮT ĐIỂM QUAN TRỌNG & PHÂN TÍCH ĐÃ THỰC HIỆN
 
 - Làm sạch dữ liệu tự động bằng script (`Clean_data.py`) và giải thích trực quan bằng notebook (`01_EDA_Cleaning.ipynb`).
 - Phân tích dữ liệu thô, phát hiện và xử lý missing values, outliers, chuẩn hóa dữ liệu.
+- **Lọc dữ liệu theo phạm vi nghiên cứu:** Loại bỏ 177 records (5.6%) không thuộc thị trường Việt Nam.
 - Trực quan hóa dữ liệu với nhiều loại biểu đồ: phân bố lương, kinh nghiệm, vị trí, top job, heatmap tương quan, v.v.
 - Phân tích nâng cao: NLP (trích xuất kỹ năng từ mô tả công việc), hồi quy dự đoán lương, phân cụm (clustering), đánh giá mô hình.
-- Kết quả phân tích: xác định top job phổ biến, mức lương, yêu cầu kinh nghiệm, kỹ năng quan trọng, mối liên hệ giữa các biến.
+- Kết quả phân tích: xác định top job phổ biến, mức lương, yêu cầu kinh nghiệm, kỹ năng quan trọng tại thị trường Việt Nam.
 - Toàn bộ quy trình có thể tái lập, dữ liệu và biểu đồ được lưu đầy đủ, code có chú thích rõ ràng.
 
 ### CÁC PHÂN TÍCH ĐÃ THỰC HIỆN
@@ -20,7 +29,11 @@
 
 ##  TỔNG QUAN DỰ ÁN
 
-Dự án phân tích dữ liệu việc làm trong lĩnh vực Data Science, bao gồm EDA, làm sạch dữ liệu, phân tích nâng cao và trực quan hóa. Dự án sử dụng Python với các thư viện pandas, seaborn, matplotlib, scikit-learn.
+Dự án phân tích dữ liệu việc làm ngành CNTT (tập trung vào Data Science, Data Engineering, Data Analysis) **tại thị trường Việt Nam**, bao gồm EDA, làm sạch dữ liệu, phân tích nâng cao và trực quan hóa. 
+
+**Mục tiêu:** Cung cấp cái nhìn tổng quan về thị trường việc làm Data tại Việt Nam, bao gồm: mức lương, yêu cầu kinh nghiệm, kỹ năng cần thiết, và các xu hướng phân bố theo địa điểm.
+
+Dự án sử dụng Python với các thư viện pandas, seaborn, matplotlib, scikit-learn, và Streamlit cho dashboard tương tác.
 
 ##  CẤU TRÚC DỰ ÁN
 
@@ -47,12 +60,18 @@ Truc_quan/
 
 ### Dataset gốc: `Data_Jobs.csv`
 - **Kích thước:** 3,187 records × 24 columns
-- **Nguồn:** Dữ liệu việc làm Data Science
+- **Nguồn:** Dữ liệu việc làm Data Science từ các nguồn tuyển dụng
 - **Encoding:** Latin1
+- **Phạm vi:** Đa quốc gia (bao gồm cả Philippines)
 
 ### Dataset đã làm sạch: `Data_Jobs_Clean.csv`
-- **Kích thước:** 3,127 records × 25 columns
-- **Đã xử lý:** Missing values, outliers, chuẩn hóa
+- **Kích thước:** 3,010 records × 25 columns (loại bỏ 177 records không thuộc VN)
+- **Phạm vi:** **Chỉ thị trường Việt Nam** (HANOI, HCMC, VIETNAM, REMOTE)
+- **Đã xử lý:** 
+  - Missing values
+  - Outliers (z-score)
+  - Chuẩn hóa Location, Job_Title
+  - **Loại bỏ PHILIPPINES và UNKNOWN** (ngoài phạm vi nghiên cứu)
 - **Encoding:** UTF-8
 
 ### Các cột chính:
@@ -97,7 +116,17 @@ python analysis.py
 - ✅ Xử lý missing values
 - ✅ Xử lý outliers (z-score)
 - ✅ Chuẩn hóa dữ liệu
+- ✅ **Lọc theo phạm vi nghiên cứu:** Loại bỏ PHILIPPINES (ngoài thị trường VN) và UNKNOWN (không xác định)
 - ✅ So sánh trước/sau làm sạch
+
+#### 🔍 **Quyết định quan trọng:**
+**Loại bỏ 177 records (5.6%) có Location = PHILIPPINES hoặc UNKNOWN**
+
+**Lý do:**
+1. **Phù hợp đề tài:** Nghiên cứu tập trung vào thị trường Việt Nam
+2. **Chất lượng dữ liệu:** UNKNOWN không thể phân tích theo địa điểm
+3. **Tính nhất quán:** Đảm bảo tất cả dữ liệu cùng phạm vi địa lý
+4. **Độ chính xác:** Tránh nhiễu kết quả do dữ liệu ngoài phạm vi
 
 ### 2. **Advanced Analysis** (`02_Advanced_Analysis_NLP_Stats_Model.ipynb` - tùy chọn)
 
@@ -142,7 +171,7 @@ python analysis.py
 1. **Top 10 jobs phổ biến:** Data Engineer, Data Analyst, Data Scientist
 2. **Phân bố lương:** Từ 1,000 - 4,000 VND (triệu)
 3. **Kinh nghiệm:** 0-10 năm, tập trung ở 1-3 năm
-4. **Location:** HANOI, HCMC chiếm đa số
+4. **Location:** HANOI, HCMC, VIETNAM, REMOTE (đã loại bỏ PHILIPPINES và UNKNOWN)
 5. **Tương quan:** Kinh nghiệm có tương quan mạnh với lương
 
 ###  **Biểu đồ được tạo:**
@@ -158,8 +187,9 @@ python analysis.py
 
 - **EDA (Exploratory Data Analysis):** giai đoạn khám phá để hiểu cấu trúc, phân phối, tương quan, phát hiện dữ liệu thiếu/ngoại lai trước khi mô hình hóa. Công cụ: thống kê mô tả, histogram/boxplot/pairplot, heatmap.
 - **Làm sạch dữ liệu:** đảm bảo 5 tiêu chí chất lượng (Accuracy, Completeness, Consistency, Integrity, Timeliness). Kỹ thuật dùng trong dự án:
-  - Điền thiếu: median cho biến số; "Unknown" cho biến text; 0 cho cờ role.
-  - Chuẩn hóa: `Job_Title` (title-case), `Location` (uppercase + mapping về tập giá trị hợp lệ).
+  - Điền thiếu: median cho biến số; "Unknown" cho biến text (sau đó loại bỏ); 0 cho cờ role.
+  - Chuẩn hóa: `Job_Title` (title-case), `Location` (uppercase + mapping về tập giá trị hợp lệ: HANOI, HCMC, VIETNAM, REMOTE).
+  - Lọc dữ liệu: Loại bỏ các record có Location = PHILIPPINES hoặc UNKNOWN.
   - Ngoại lai: z-score |z| ≤ 3 cho `Est_Salary`.
   - Tính toàn vẹn: set role theo `Job_Title`; đảm bảo có ≥1 role; `Job_ID` duy nhất.
 - **NLP cơ bản:** tiền xử lý text (lowercase, lọc ký tự), đếm tần suất skill, bigram. Mục tiêu: phác họa nhu cầu kỹ năng thị trường.
@@ -203,14 +233,44 @@ python analysis.py
 
 ## CHI TIẾT KẾT QUẢ & DIỄN GIẢI
 
-- Top job phổ biến: nghiêng về Data Engineer/Analyst/Scientist → phản ánh cầu việc làm nhóm Data nền tảng.
-- Lương ước tính: tập trung 1,000–4,000 (triệu VND), phân phối lệch phải; boxplot theo nhóm job cho thấy chênh lệch giữa top5 job phổ biến.
-- Kinh nghiệm: dồn ở 1–3 năm → thị trường đòi hỏi junior–mid nhiều; phù hợp cơ hội entry-to-mid level.
-- Location: HANOI/HCMC chiếm ưu thế; `REMOTE`/`VIETNAM`/`PHILIPPINES` là nhóm nhỏ hơn.
-- Tương quan: `Min_YOE`–`Est_Salary` dương rõ; song còn phụ thuộc role/location.
-- NLP kỹ năng: Python/SQL/BI (Power BI/Tableau/Excel) thường xuyên xuất hiện → cần đầu tư kỹ năng lõi.
-- Hồi quy: Ridge giảm overfit nhẹ; MAE/MAPE ở mức baseline mô tả được xu hướng nhưng còn dư địa cải thiện (bổ sung đặc trưng).
-- Clustering: cụm lương–YOE cho thấy phân khúc “junior/median” chiếm số đông, cụm “cao lương–YOE cao” nhỏ hơn.
+### 📊 **Thị trường việc làm Data tại Việt Nam:**
+
+- **Top job phổ biến:** Data Engineer/Analyst/Scientist chiếm ưu thế → Phản ánh nhu cầu cao về nhân lực Data tại thị trường Việt Nam.
+
+- **Mức lương:** 
+  - Tập trung 1,000–4,000 USD/tháng
+  - Phân phối lệch phải, có nhóm lương cao (senior)
+  - Chênh lệch rõ rệt giữa các vị trí khác nhau
+
+- **Kinh nghiệm:** 
+  - Tập trung ở 1–3 năm kinh nghiệm
+  - Thị trường Việt Nam đang có nhu cầu cao về junior-mid level
+  - Cơ hội tốt cho người mới vào nghề
+
+- **Phân bố địa điểm (Việt Nam):**
+  - **HANOI & HCMC:** Chiếm đa số công việc (trung tâm công nghệ)
+  - **VIETNAM:** Công việc không chỉ định cụ thể thành phố
+  - **REMOTE:** Xu hướng làm việc từ xa đang tăng
+  - **Đã loại bỏ:** PHILIPPINES (ngoài phạm vi VN) và UNKNOWN (không xác định)
+
+- **Tương quan:** 
+  - Kinh nghiệm (`Min_YOE`) có tương quan dương với lương (`Est_Salary`)
+  - Mức lương còn phụ thuộc vào role và location
+
+- **Kỹ năng cần thiết (NLP analysis):** 
+  - **Python, SQL:** Kỹ năng nền tảng bắt buộc
+  - **BI Tools:** Power BI, Tableau, Excel - quan trọng cho Data Analyst
+  - **Cloud & Big Data:** AWS, GCP, Spark - cần thiết cho Data Engineer
+
+- **Mô hình dự đoán:**
+  - Ridge Regression cho kết quả tốt hơn Linear Regression
+  - MAE/MAPE ở mức chấp nhận được cho baseline model
+  - Còn dư địa cải thiện bằng thêm features từ JD_Trans
+
+- **Phân cụm (Clustering):**
+  - Nhóm "Junior" (lương thấp, YOE thấp): Chiếm đa số
+  - Nhóm "Mid-level" (lương trung bình, 3-5 năm YOE): Phổ biến
+  - Nhóm "Senior" (lương cao, >5 năm YOE): Ít hơn nhưng có mức lương hấp dẫn
 
 ##  KIỂM CHỨNG & TÁI LẬP
 
