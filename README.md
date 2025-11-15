@@ -193,7 +193,6 @@ python analysis.py
   - Ngoại lai: z-score |z| ≤ 3 cho `Est_Salary`.
   - Tính toàn vẹn: set role theo `Job_Title`; đảm bảo có ≥1 role; `Job_ID` duy nhất.
 - **NLP cơ bản:** tiền xử lý text (lowercase, lọc ký tự), đếm tần suất skill, bigram. Mục tiêu: phác họa nhu cầu kỹ năng thị trường.
-- **Hồi quy tuyến tính/Ridge:** mô hình dự đoán lương theo kinh nghiệm và đặc trưng phân loại (one-hot). Ridge giảm phương sai với regularization L2. Đánh giá bằng MAE/MAPE, k-fold CV.
 - **Clustering K-means:** phân cụm theo `Min_YOE`, `Est_Salary` (kèm one-hot `Location`). Chọn k bằng Elbow/Silhouette; phân tích đặc trưng từng cụm để định vị phân khúc công việc.
 - **Tương quan & Feature importance:** ma trận tương quan để nhìn quan hệ tuyến tính; Random Forest importance để xem đóng góp tương đối (phi tuyến) của biến.
 
