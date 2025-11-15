@@ -222,7 +222,6 @@ python analysis.py
 4) Phân tích nâng cao — `02_Advanced_Analysis_NLP_Stats_Model.ipynb`
 - Biểu đồ chuyên sâu: role/location/kinh nghiệm, pairplot.
 - NLP: tần suất kỹ năng, bigram; minh họa nhu cầu skill.
-- Mô hình: Linear & Ridge (pipeline chuẩn hóa/one-hot); CV=5; báo MAE/MAPE; fit/đánh giá hold-out.
 - Clustering: Elbow, Silhouette; k=3 (ví dụ); phân tích cluster (lương/YOE/job phổ biến); scatter Min_YOE vs Est_Salary theo cluster.
 - Tương quan & Importance: heatmap các biến số; Random Forest xem mức quan trọng biến (Min_YOE/Location...).
 - Ghi chú: phần kiểm định thống kê đã bỏ theo yêu cầu.
@@ -261,10 +260,6 @@ python analysis.py
   - **BI Tools:** Power BI, Tableau, Excel - quan trọng cho Data Analyst
   - **Cloud & Big Data:** AWS, GCP, Spark - cần thiết cho Data Engineer
 
-- **Mô hình dự đoán:**
-  - Ridge Regression cho kết quả tốt hơn Linear Regression
-  - MAE/MAPE ở mức chấp nhận được cho baseline model
-  - Còn dư địa cải thiện bằng thêm features từ JD_Trans
 
 - **Phân cụm (Clustering):**
   - Nhóm "Junior" (lương thấp, YOE thấp): Chiếm đa số
