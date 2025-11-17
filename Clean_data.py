@@ -9,14 +9,14 @@ df = pd.read_csv(file_path, encoding="latin1")
 print("📌 Kích thước dữ liệu ban đầu:", df.shape)
 
 # ===== 2. Xử lý trùng lặp (Integrity) =====
-subset_cols = [col for col in ["Job_ID", "Job_Title", "JD_Trans"] if col in df.columns]
-if subset_cols:
-    df = df.drop_duplicates(subset=subset_cols)
+subset_cols = [col for col in ["Job_ID", "Job_Title", "JD_Trans"] if col in df.columns] # Chỉ chọn các cột có trong DataFrame
+if subset_cols: # Kiểm tra nếu có cột để xóa trùng
+    df = df.drop_duplicates(subset=subset_cols) # Xóa trùng dựa trên các cột đã chọn
 print("✅ Sau khi xóa trùng:", df.shape)
 
 # ===== 3. Xử lý giá trị thiếu (Accuracy + Integrity) =====
 # Numeric: median
-num_cols = [col for col in ["Min_YOE", "Est_Salary"] if col in df.columns]
+num_cols = [col for col in ["Min_YOE", "Est_Salary"] if col in df.columns] # Chỉ chọn các cột số có trong DataFrame
 for col in num_cols:
     df[col] = df[col].fillna(df[col].median())
 
@@ -57,6 +57,8 @@ print(f"✅ Sau khi loại bỏ PHILIPPINES & UNKNOWN: {df.shape[0]} dòng")
 # Min_YOE
 df["Min_YOE"] = df["Min_YOE"].round().astype(int)
 df = df[df["Min_YOE"] >= 0]
+# Loại bỏ các dòng có Min_YOE quá cao (ví dụ > 40 năm)
+df = df[df["Min_YOE"] <= 40]
 
 # Est_Salary: xử lý outliers (z-score)
 z_scores = (df["Est_Salary"] - df["Est_Salary"].mean()) / df["Est_Salary"].std()
