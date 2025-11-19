@@ -1,4 +1,4 @@
-# DỰ ÁN PHÂN TÍCH VÀ TRỰC QUAN HÓA DỮ LIỆU VIỆC LÀM NGÀNH CNTT Ở VIỆT NAM
+# DỰ ÁN PHÂN TÍCH VÀ TRỰC QUAN HÓA DỮ LIỆU TUYỂN DỤNG VIỆC LÀM NGÀNH CNTT Ở VIỆT NAM
 
 ## 🎯 ĐỀ TÀI
 **"Phân tích và trực quan hóa dữ liệu tuyển dụng ngành CNTT ở Việt Nam"**
@@ -273,27 +273,6 @@ python analysis.py
 - Nếu không có `Data_Jobs.csv`, cần cung cấp file gốc cùng cấu trúc như mô tả.
 - Kiểm tra ảnh xuất trong `charts/` khớp tiêu đề mục “Biểu đồ được tạo”.
 
-##  HẠN CHẾ & HƯỚNG PHÁT TRIỂN
-
-- Hạn chế:
-  - Đường dẫn tuyệt đối Windows → giảm tính di động; nên tham số hóa hoặc dùng đường dẫn tương đối.
-  - Lương ước tính/YOE có thể chứa nhiễu do chuẩn hóa; z-score loại ngoại lai tuyến tính, có thể bỏ sót ngoại lai phi tuyến.
-  - Mô hình hồi quy đơn giản (ít biến): chưa tính đến text embedding từ `JD_Trans`, tương tác (role×YOE), hiệu ứng location sâu hơn.
-  - NLP đếm tần suất đơn giản; chưa lemmatize/stemming hoặc dùng embedding.
-- Phát triển:
-  - Tách cấu hình (config/argparse/.env); thêm `requirements.txt` + hướng dẫn Docker.
-  - Thử Regularization khác (Lasso/ElasticNet), Tree-based (XGBoost/LightGBM) và tối ưu siêu tham số.
-  - Trích xuất đặc trưng từ `JD_Trans` (TF-IDF, FastText, BERT) đưa vào mô hình lương.
-  - Kiểm định thống kê/Bootstrap CI (nếu cần trong báo cáo học thuật — hiện đã bỏ khỏi notebook theo yêu cầu).
-  - Dashboard (Streamlit/Plotly Dash) cho tương tác trực quan.
-
-##  THỰC HÀNH TỐT
-
-- Một nguồn sự thật cho làm sạch: giữ logic trong `Clean_data.py` và để notebook gọi lại nếu cần.
-- Gắn nhãn phiên bản dữ liệu (`Last_Updated`) để truy vết.
-- Lưu toàn bộ biểu đồ và chốt seed/random_state cho tái lập.
-- Thêm unit test nhẹ cho cleaning (kiểm tra mapping location, non-negative `Min_YOE`, không NA sau clean...).
-
 ##  CÔNG NGHỆ SỬ DỤNG
 
 ### **Thư viện Python:**
@@ -311,22 +290,3 @@ python analysis.py
 - **NLP:** Natural Language Processing
 - **Machine Learning:** Regression, Clustering
 - **Visualization:** 7+ loại biểu đồ khác nhau
-
-
-##  GHI CHÚ
-
-- Tất cả biểu đồ được lưu trong thư mục `charts/`
-- Dữ liệu đã được làm sạch và chuẩn hóa
-- Code có comment tiếng Việt để dễ hiểu
-- Notebooks có thể chạy độc lập
-
-##  MỤC TIÊU HỌC TẬP
-
-Dự án này giúp sinh viên:
--  Thực hành EDA và Data Cleaning
--  Áp dụng Machine Learning cơ bản
--  Sử dụng các thư viện Python phổ biến
--  Trực quan hóa dữ liệu hiệu quả
--  Phân tích thống kê và NLP
--  Viết báo cáo phân tích chuyên nghiệp
-
