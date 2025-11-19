@@ -1,7 +1,7 @@
 # DỰ ÁN PHÂN TÍCH VÀ TRỰC QUAN HÓA DỮ LIỆU VIỆC LÀM NGÀNH CNTT Ở VIỆT NAM
 
 ## 🎯 ĐỀ TÀI
-**"Phân tích và trực quan hóa dữ liệu việc làm ngành CNTT ở Việt Nam"**
+**"Phân tích và trực quan hóa dữ liệu tuyển dụng ngành CNTT ở Việt Nam"**
 
 ## 📍 PHẠM VI NGHIÊN CỨU
 - **Thị trường:** Việt Nam (Hà Nội, TP.HCM, Việt Nam, Remote)
@@ -29,7 +29,7 @@
 
 ##  TỔNG QUAN DỰ ÁN
 
-Dự án phân tích dữ liệu việc làm ngành CNTT (tập trung vào Data Science, Data Engineering, Data Analysis) **tại thị trường Việt Nam**, bao gồm EDA, làm sạch dữ liệu, phân tích nâng cao và trực quan hóa. 
+Dự án phân tích dữ liệu tuyển dụng ngành CNTT (tập trung vào Data Science, Data Engineering, Data Analysis) **tại thị trường Việt Nam**, bao gồm EDA, làm sạch dữ liệu, phân tích nâng cao và trực quan hóa. 
 
 **Mục tiêu:** Cung cấp cái nhìn tổng quan về thị trường việc làm Data tại Việt Nam, bao gồm: mức lương, yêu cầu kinh nghiệm, kỹ năng cần thiết, và các xu hướng phân bố theo địa điểm.
 
@@ -45,6 +45,7 @@ Truc_quan/
 ├──  02_Advanced_Analysis_NLP_Stats_Model.ipynb  # Notebook phân tích nâng cao (tùy chọn)
 ├──  analysis.py                     # Script phân tích cơ bản
 ├──  Clean_data.py                   # Script làm sạch dữ liệu
+├── dashboard.py                   # Dashboard trực quan hóa bằng Streamlit
 ├──  charts/                         # Thư mục chứa biểu đồ
 │   ├── experience_distribution.png
 │   ├── heatmap_correlation.png
