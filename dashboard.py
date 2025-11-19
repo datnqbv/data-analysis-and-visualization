@@ -44,7 +44,7 @@ def load_data():
 df = load_data()
 
 # Header
-st.title("📊 Dashboard Phân Tích Thị Trường Việc Làm Data")
+st.title("📊 Dashboard Phân Tích Thị Trường tuyển dụng CNTT")
 st.markdown("---")
 
 # Sidebar - Bộ lọc
